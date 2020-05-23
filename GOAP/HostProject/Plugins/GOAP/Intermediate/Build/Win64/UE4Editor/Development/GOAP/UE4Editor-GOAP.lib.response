@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-GOAP.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Jose Manuel\Downloads\GOAP\HostProject\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\Jose Manuel\Downloads\GOAP\HostProject\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\Module.GOAP.cpp.obj"
+"C:\Users\Jose Manuel\Downloads\GOAP\HostProject\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\Module.GOAP.gen.cpp.obj"
+"C:\Users\Jose Manuel\Downloads\GOAP\HostProject\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\Default.rc2.res"
+/OUT:"C:\Users\Jose Manuel\Downloads\GOAP\HostProject\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\UE4Editor-GOAP.lib"
+/INCLUDE:IMPLEMENT_MODULE_GOAP
