@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "GOAP",
+	"Description": "Plugin for make GOAP AI using Blueprints",
+	"Category": "AI",
+	"CreatedBy": "Diego Romero-Hombrebueno, Mario Sanchez, Jose Manuel Sierra",
+	"CreatedByURL": "https://github.com/Narratech/TFGRomeroSanchezSierra",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "https://github.com/Narratech/TFGRomeroSanchezSierra",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "GOAP",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
