@@ -1,0 +1,10 @@
+{
+	"FileVersion": 3,
+	"Plugins": [
+		{
+			"Name": "GOAP",
+			"Enabled": true
+		}
+	],
+	"EngineAssociation": "4.25"
+}
