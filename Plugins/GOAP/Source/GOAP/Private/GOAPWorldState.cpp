@@ -72,3 +72,7 @@ void GOAPWorldState::joinWorldState(GOAPWorldState w) {
 	}
 
 }
+
+bool GOAPWorldState::isEmpty() {
+	return atoms.size() == 0;
+}

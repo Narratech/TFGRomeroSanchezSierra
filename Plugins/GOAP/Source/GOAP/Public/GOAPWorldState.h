@@ -43,4 +43,6 @@ public:
 	void cleanAtoms();
 
 	void joinWorldState(GOAPWorldState w);
+
+	bool isEmpty();
 };

@@ -20,11 +20,13 @@ void UGOAPAction::create_P_E() {
 	for (FAtom itE : effects) {
 		wsEffects.addAtom(itE.name, itE.value);
 	}
+	if(targetsType == NULL)
+		UE_LOG(LogTemp, Warning, TEXT("Targets type of '%s' action are not defined."), *name);
 }
 
 TArray<AActor*> UGOAPAction::getTargetsList(APawn* p) {
 	TArray<AActor*> actorsFound;
-	UGameplayStatics::GetAllActorsOfClass(p->GetWorld(), targetsType[0], actorsFound);
+	UGameplayStatics::GetAllActorsOfClass(p->GetWorld(), targetsType, actorsFound);
 	return actorsFound;
 }
 

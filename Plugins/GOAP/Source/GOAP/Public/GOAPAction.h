@@ -48,7 +48,7 @@ public:
 	float cost;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Properties)
-	TArray<TSubclassOf<AActor>> targetsType;
+	TSubclassOf<AActor> targetsType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = WorldState)
 	TArray<FAtom> preconditions;
