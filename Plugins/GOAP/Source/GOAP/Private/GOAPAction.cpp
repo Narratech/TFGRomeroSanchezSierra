@@ -21,7 +21,7 @@ void UGOAPAction::create_P_E() {
 		wsEffects.addAtom(itE.name, itE.value);
 	}
 	if(targetsType == NULL)
-		UE_LOG(LogTemp, Warning, TEXT("Targets type of '%s' action are not defined."), *name);
+		UE_LOG(LogTemp, Warning, TEXT("Targets' type of '%s' action are not defined."), *name);
 }
 
 TArray<AActor*> UGOAPAction::getTargetsList(APawn* p) {

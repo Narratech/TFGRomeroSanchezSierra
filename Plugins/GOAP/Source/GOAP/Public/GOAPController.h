@@ -17,7 +17,8 @@
 #include "GOAPController.generated.h"
 
 /**
-
+* AIController containg the planner, states of the current and desired world, and the list of available actions the AI can perform.
+* Current world and desired world are private for each AI, but it's possible to create a global current world to notify changes to other AIs.
  */
 UCLASS()
 class GOAP_API AGOAPController : public AAIController
@@ -64,9 +65,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool executeGOAP();
 
+	// Returns the actions that make up the plan.
 	UFUNCTION(BlueprintCallable)
 	TArray<UGOAPAction*> getPlan();
 
+	// Sets the goal of the AI, this function can also be used to change the goal.
 	UFUNCTION(BlueprintCallable)
 	void setGoal(TArray<FAtom> newGoal);
 	

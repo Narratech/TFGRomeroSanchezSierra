@@ -14,7 +14,7 @@
 #include "CoreMinimal.h"
 
 /**
- * 
+ * Node used in A* pathfinding algorithm. Represents a possible state of the world.
  */
 class GOAP_API GOAPNode
 {
@@ -28,6 +28,7 @@ private:
 
 	int parent;
 
+	// Chosen action to reach this node.
 	UGOAPAction* action;
 
 public:

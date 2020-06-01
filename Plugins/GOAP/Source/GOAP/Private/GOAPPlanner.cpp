@@ -71,17 +71,20 @@ std::vector<GOAPNode> GOAPPlanner::getAdjacent(GOAPNode current, std::vector<UGO
 
 	for (int i = 0; i < vActions.size(); ++i) {
 
+		// Checks if the action can be performed from the current world.
 		if (current.getWorld().isIncluded(vActions[i]->getPreconditions())) {
 
+			// Checks if the action is the same as the current one. (This can be deleted if you want your AI to perform the same action consecutively).
 			if (current.getAction() != vActions[i]) {
 
+				// Checks the procedural precondition of the action.
 				if (vActions[i]->checkProceduralPrecondition(p)) {
 
-					world = current.getWorld();
-					world.joinWorldState(vActions[i]->getEffects());
-					adjacent.setWorld(world);
-					adjacent.setAction(vActions[i]);
-					adjacentNodes.push_back(adjacent);
+					world = current.getWorld(); // Saves the current world.
+					world.joinWorldState(vActions[i]->getEffects()); // Applies effects of the action to the saved world.
+					adjacent.setWorld(world); // Sets the adjacet node's world.
+					adjacent.setAction(vActions[i]); // Sets the adjacet node's action. 
+					adjacentNodes.push_back(adjacent); // Includes the adjacent node in the list.
 
 				}
 			}

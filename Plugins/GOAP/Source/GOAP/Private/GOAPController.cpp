@@ -28,7 +28,7 @@ void AGOAPController::BeginPlay()
 	for (FAtom atom : desiredWorld)
 		wsDesiredWorld.addAtom(atom.name, atom.value);
 
-	// Loads actions preconditions and effects.
+	// Loads actions' preconditions and effects.
 	for (UGOAPAction* a : auxActions)
 		a->create_P_E();
 

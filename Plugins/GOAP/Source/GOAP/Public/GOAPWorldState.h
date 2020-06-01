@@ -14,6 +14,7 @@
 #include "CoreMinimal.h"
 
 /**
+ * WorldState is made up of atoms that define the state of a world.
  * 
  */
 class GOAP_API GOAPWorldState
@@ -42,6 +43,7 @@ public:
 
 	void cleanAtoms();
 
+	// Mixes two WorldState.
 	void joinWorldState(GOAPWorldState w);
 
 	bool isEmpty();
