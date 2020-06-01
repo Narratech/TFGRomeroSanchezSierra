@@ -1,4 +1,4 @@
-# GOAP
+# GOAP NPC Plugin
 
 Hi there!
 
