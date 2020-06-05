@@ -1,5 +1,15 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+/**
+	GOAP NPC: Goal-Oriented Action Planning for Non-Player Characters.
 
+	GNU Lesser General Public License v3.0
+
+	Publishers/Authors:
+		-	Diego Romero-Hombrebueno Santos.
+		-	Mario Sanchez Blanco.
+		-	Jose Manuel Sierra Ramos.
+
+	Published on 2020.
+ */
 using UnrealBuildTool;
 
 public class GOAP : ModuleRules

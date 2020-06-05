@@ -1,12 +1,14 @@
 /**
-	GOAP: Goal-Oriented Action Planning.
+	GOAP NPC: Goal-Oriented Action Planning for Non-Player Characters.
 
 	GNU Lesser General Public License v3.0
 
-	Authors:
+	Publishers/Authors:
 		-	Diego Romero-Hombrebueno Santos.
 		-	Mario Sanchez Blanco.
 		-	Jose Manuel Sierra Ramos.
+
+	Published on 2020.
  */
 #include "GOAPNode.h"
 
