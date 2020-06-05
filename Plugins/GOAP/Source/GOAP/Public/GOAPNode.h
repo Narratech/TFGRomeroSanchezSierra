@@ -26,7 +26,7 @@ private:
 
 	int h;
 
-	int g;
+	float g;
 
 	int parent;
 

@@ -27,23 +27,21 @@ GOAPPlanner::GOAPPlanner(GOAPWorldState* c, GOAPWorldState* g, std::vector<UGOAP
 	actions = a;
 }
 
-GOAPNode GOAPPlanner::lowestFinList(std::list<GOAPNode> opList) {
-	GOAPNode n;
-	std::list<GOAPNode>::iterator it = opList.begin();
-	n = *it;
-	int minF = it->getF();
-	for (int i = 0; i < opList.size(); ++i) {
-		if ((it->getF()) < minF) {
-			n = *it;
-			minF = it->getF();
+GOAPNode GOAPPlanner::lowestFinList(TArray<GOAPNode> opList) {
+	GOAPNode node;
+
+	float minF = MAX_FLT;
+	for (GOAPNode &n : opList) {
+		if ((n.getF()) < minF) {
+			node = n;
+			minF = n.getF();
 		}
-		++it;
 	}
 
-	return n;
+	return node;
 }
 
-bool containsNodeOpen(GOAPNode nod, std::list<GOAPNode> lista) {
+bool containsNodeOpen(GOAPNode nod, TArray<GOAPNode> lista) {
 	bool contiene = false;
 	for (GOAPNode &n : lista) {
 		if (n == nod) {
@@ -54,7 +52,7 @@ bool containsNodeOpen(GOAPNode nod, std::list<GOAPNode> lista) {
 	return contiene;
 }
 
-bool containsNode(GOAPNode node, std::vector<GOAPNode> list) {
+bool containsNode(GOAPNode node, TArray<GOAPNode> list) {
 	bool contains = false;
 	for (GOAPNode &n : list) {
 		if (n == node) {
@@ -102,16 +100,16 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p) {
 	GOAPNode start; start.setWorld(*currentWorld); start.setParent(-1);
 	GOAPNode last;
 
-	openList.clear();
+	openList.Empty();
 	closedList.clear();
-	openList.push_back(start);
+	openList.Push(start);
 	bool continues = true;
 
 	// Search and create the cheapest path between actions having into account their preconditions, effects and cost.
 	while (continues) {
 
 		GOAPNode current = lowestFinList(openList);
-		openList.remove(current);
+		openList.Remove(current);
 		closedList.push_back(current);
 		int pos = closedList.size() - 1;
 
@@ -135,7 +133,7 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p) {
 				adjacent.setParent(pos);
 				adjacent.setH(current.getWorld());
 				adjacent.setG(current);
-				openList.push_back(adjacent);
+				openList.Push(adjacent);
 			}
 			// If current path to adjacent node is cheaper than the previous one, the path changes. 
 			else if (adjacent.getG() > adjacent.getG() + current.getG()) {
@@ -146,7 +144,7 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p) {
 		}
 
 		// If open list is empty, the plan stops.
-		if (openList.size() == 0)
+		if (openList.Num() == 0)
 			continues = false;
 
 	}

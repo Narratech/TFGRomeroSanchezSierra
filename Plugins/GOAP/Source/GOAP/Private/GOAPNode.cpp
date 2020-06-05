@@ -29,6 +29,7 @@ bool GOAPNode::operator==(GOAPNode n) {
 	return action == n.getAction();
 }
 
+
 GOAPWorldState GOAPNode::getWorld() {
 	return world;
 }

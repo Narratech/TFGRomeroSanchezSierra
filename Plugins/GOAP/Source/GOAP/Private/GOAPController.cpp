@@ -62,29 +62,24 @@ void AGOAPController::Tick(float DeltaSeconds)
 
 bool AGOAPController::executeGOAP() {
 
-	try {
 
-		if (auxActions.size() > 0 && !wsCurrentWorld.isEmpty() && !wsDesiredWorld.isEmpty()) {
+	if (auxActions.size() > 0 && !wsCurrentWorld.isEmpty() && !wsDesiredWorld.isEmpty()) {
 
-			// Creates the cheapest plan of actions.
-			plan = planner->generatePlan(GetPawn());
+		// Creates the cheapest plan of actions.
+		plan = planner->generatePlan(GetPawn());
 
-			if (plan.Num() > 0) {
+		if (plan.Num() > 0) {
 				
-				// Gets next action to perform.
-				UGOAPAction* aux = plan[plan.Num() - 1];
+			// Gets next action to perform.
+			UGOAPAction* aux = plan[plan.Num() - 1];
 
-				// Performs an action and when it's done its effects are applied, changing the current world state.
-				if (aux->doAction(GetPawn())) {
-					wsCurrentWorld.joinWorldState(aux->getEffects());
-				}
+			// Performs an action and when it's done its effects are applied, changing the current world state.
+			if (aux->doAction(GetPawn())) {
+				wsCurrentWorld.joinWorldState(aux->getEffects());
+			}
 
-				return true;
-			}		
-		}
-	}
-	catch (...) {
-		UE_LOG(LogTemp, Warning, TEXT("An error has occurred while generating the plan."));
+			return true;
+		}		
 	}
 
 	return false;

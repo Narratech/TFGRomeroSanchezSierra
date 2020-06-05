@@ -4,14 +4,18 @@
 	"Category": "",
 	"Description": "",
 	"Modules": [
-		{
-			"Name": "TFG",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"AIModule",
-				"CoreUObject"
-			]
-		}
+    {
+      "Name": "TFG",
+      "Type": "Runtime",
+      "LoadingPhase": "Default",
+      "AdditionalDependencies": [
+        "AIModule",
+        "CoreUObject"
+      ],
+      "WhitelistPlatforms": [
+        "Win64",
+        "Android"
+      ]
+    }
 	]
 }

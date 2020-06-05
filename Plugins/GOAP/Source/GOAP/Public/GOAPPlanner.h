@@ -13,7 +13,6 @@
 #pragma once
 
 #include <vector>
-#include <list>
 #include "GOAPWorldState.h"
 #include "GOAPNode.h"
 #include "GOAPAction.h"
@@ -34,7 +33,7 @@ private:
 
 	std::vector<UGOAPAction*> actions;
 
-	std::list<GOAPNode> openList;
+	TArray<GOAPNode> openList;
 
 	std::vector<GOAPNode> closedList;
 
@@ -47,7 +46,7 @@ public:
 	GOAPPlanner(GOAPWorldState* c, GOAPWorldState* g, std::vector<UGOAPAction*> a);
 
 	// Get the node with lowest F's value. F = G + H.
-	GOAPNode lowestFinList(std::list<GOAPNode> openList);
+	GOAPNode lowestFinList(TArray<GOAPNode> openList);
 
 	// Returns the nodes adjacent to the current one.
 	std::vector<GOAPNode> getAdjacent(GOAPNode current, std::vector<UGOAPAction*> vActions, APawn* p);
