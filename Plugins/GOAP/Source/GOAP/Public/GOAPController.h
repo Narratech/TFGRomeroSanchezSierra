@@ -63,9 +63,13 @@ public:
 
 	virtual void Tick(float DeltaSeconds) override;
 
-	// Create and execute the plan.
+	// Creates and execute the plan.
 	UFUNCTION(BlueprintCallable)
 	bool executeGOAP();
+
+	// Creates actions plan
+	UFUNCTION(BlueprintCallable)
+	bool generatePlan();
 
 	// Returns the actions that make up the plan.
 	UFUNCTION(BlueprintCallable)

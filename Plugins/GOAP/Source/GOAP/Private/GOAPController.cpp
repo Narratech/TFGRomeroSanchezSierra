@@ -62,11 +62,7 @@ void AGOAPController::Tick(float DeltaSeconds)
 
 bool AGOAPController::executeGOAP() {
 
-
-	if (auxActions.size() > 0 && !wsCurrentWorld.isEmpty() && !wsDesiredWorld.isEmpty()) {
-
-		// Creates the cheapest plan of actions.
-		plan = planner->generatePlan(GetPawn());
+	if (generatePlan()) {
 
 		if (plan.Num() > 0) {
 				
@@ -80,6 +76,19 @@ bool AGOAPController::executeGOAP() {
 
 			return true;
 		}		
+	}
+
+	return false;
+}
+
+bool AGOAPController::generatePlan() {
+
+	if (auxActions.size() > 0 && !wsCurrentWorld.isEmpty() && !wsDesiredWorld.isEmpty()) {
+
+		// Creates the cheapest plan of actions.
+		plan = planner->generatePlan(GetPawn());
+
+		return true;
 	}
 
 	return false;
