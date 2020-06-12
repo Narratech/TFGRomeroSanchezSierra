@@ -62,19 +62,19 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 	// Creates and execute the plan.
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	bool executeGOAP();
 
 	// Creates actions plan
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	bool generatePlan();
 
 	// Returns the actions that make up the plan.
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	TArray<UGOAPAction*> getPlan();
 
 	// Sets the goal of the AI, this function can also be used to change the goal.
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	void setGoal(TArray<FAtom> newGoal);
 
 };

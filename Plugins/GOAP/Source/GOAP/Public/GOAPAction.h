@@ -26,11 +26,11 @@ struct FAtom
 	GENERATED_USTRUCT_BODY()
 
 	// Name of the atom.
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Atom)
 	FString name;
 
 	// Value of the atom.
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Atom)
 	bool value;
 
 };
@@ -79,15 +79,15 @@ public:
 	UGOAPAction();
 
 	// Search all actors of targetsType class located in the world.
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = GOAPAction)
 	TArray<AActor*> getTargetsList(APawn* p);
 
 	// Optional function to check if it's possible to perform the action.
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintImplementableEvent, Category = GOAPAction)
 	bool checkProceduralPrecondition(APawn* p);
 
 	// Performs the action.
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = GOAPAction)
 	bool doAction(APawn* p);
 
 	// Generate action's preconditions and effects.
@@ -106,7 +106,7 @@ public:
 	float getCost();
 
 	// Gets the chosen target from targetList or the one specific in setTarget().
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = GOAPAction)
 	AActor* getTarget();
 
 	GOAPWorldState getPreconditions();
@@ -120,7 +120,7 @@ public:
 	void setCost(float c);
 
 	// Sets a specific target.
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = GOAPAction)
 	void setTarget(AActor* t);
 
 	void setPreconditions(GOAPWorldState preconditionAtoms);
