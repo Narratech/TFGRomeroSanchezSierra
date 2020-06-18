@@ -10,7 +10,6 @@
  */
 #pragma once
 
-#include <vector>
 #include "GOAPPlanner.h"
 #include "CoreMinimal.h"
 #include "AIController.h"
@@ -43,7 +42,7 @@ private:
 
 	GOAPPlanner* planner;
 
-	std::vector<UGOAPAction*> auxActions;
+	TArray<UGOAPAction*> auxActions;
 
 	TArray<UGOAPAction*> plan;
 
@@ -75,18 +74,18 @@ public:
 
 	// Sets the goal of the AI, this function can also be used to change the goal.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-	void setGoal(TArray<FAtom> newGoal);
+	void setGoal(const TArray<FAtom>& newGoal);
 
 	// Adds or modifies atoms from the desired world state. Atoms already existing in the desired world state are modified by new input values.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-	void updateGoal(TArray<FAtom> atoms);
+	void updateGoal(const TArray<FAtom>& atoms);
 
 	// Sets the current world state of the AI, this function can also be used to change the current world state.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-	void setCurrentWorld(TArray<FAtom> newCurrentWorld);
+	void setCurrentWorld(const TArray<FAtom>& newCurrentWorld);
 
 	// Adds or modifies atoms from the current world state. Atoms already existing in the current world state are modified by new input values.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
-	void updateCurrentWorld(TArray<FAtom> atoms);
+	void updateCurrentWorld(const TArray<FAtom>& atoms);
 
 };

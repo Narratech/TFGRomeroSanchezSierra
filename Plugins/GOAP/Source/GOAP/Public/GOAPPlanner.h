@@ -10,7 +10,6 @@
  */
 #pragma once
 
-#include <vector>
 #include "GOAPWorldState.h"
 #include "GOAPNode.h"
 #include "GOAPAction.h"
@@ -29,11 +28,11 @@ private:
 
 	GOAPWorldState* goal;
 
-	std::vector<UGOAPAction*> actions;
+	TArray<UGOAPAction*> actions;
 
 	TArray<GOAPNode> openList;
 
-	std::vector<GOAPNode> closedList;
+	TArray<GOAPNode> closedList;
 
 public:
 
@@ -41,13 +40,13 @@ public:
 
 	~GOAPPlanner();
 
-	GOAPPlanner(GOAPWorldState* c, GOAPWorldState* g, std::vector<UGOAPAction*> a);
+	GOAPPlanner(GOAPWorldState* c, GOAPWorldState* g, const TArray<UGOAPAction*>& a);
 
 	// Get the node with lowest F's value. F = G + H.
-	GOAPNode lowestFinList(TArray<GOAPNode> openList);
+	GOAPNode lowestFinList(const TArray<GOAPNode>& opList);
 
 	// Returns the nodes adjacent to the current one.
-	std::vector<GOAPNode> getAdjacent(GOAPNode current, std::vector<UGOAPAction*> vActions, APawn* p);
+	TArray<GOAPNode> getAdjacent(GOAPNode current, const TArray<UGOAPAction*>& vActions, APawn* p);
 
 	// A* pathfinding algorithm.
 	TArray<UGOAPAction*> generatePlan(APawn* p);

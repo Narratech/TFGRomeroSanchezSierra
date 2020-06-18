@@ -10,7 +10,7 @@
  */
 #pragma once
 
-#include "map"
+#include <map>
 #include "CoreMinimal.h"
 
 /**
@@ -29,15 +29,15 @@ public:
 
 	~GOAPWorldState();
 
-	GOAPWorldState(std::map<FString, bool> atoms);
+	GOAPWorldState(const std::map<FString, bool>& atoms);
 
 	bool operator==(GOAPWorldState w);
 
 	bool isIncluded(GOAPWorldState w);
 
-	std::map<FString, bool> getAtoms();
+	const std::map<FString, bool>& getAtoms();
 
-	void setAtoms(std::map<FString, bool> atoms);
+	void setAtoms(const std::map<FString, bool>& atoms);
 
 	void addAtom(FString name, bool value);
 

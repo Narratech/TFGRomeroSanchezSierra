@@ -15,9 +15,10 @@ AGOAPController::AGOAPController() {}
 void AGOAPController::BeginPlay()
 {
 	// Loads actions.
-	for (auto i = 0; i < actions.Num(); ++i) {
+	for (auto i = 0; i < actions.Num(); ++i) 
+	{
 		FString aux = actions[i].GetDefaultObject()->GetName();
-		auxActions.push_back(actions[i].GetDefaultObject());
+		auxActions.Push(actions[i].GetDefaultObject());
 	}
 
 	// Loads Current World.
@@ -36,7 +37,7 @@ void AGOAPController::BeginPlay()
 	planner = new GOAPPlanner(&wsCurrentWorld, &wsDesiredWorld, auxActions);
 
 	// Error messages.
-	if(auxActions.size() == 0)
+	if(auxActions.Num() == 0)
 		UE_LOG(LogTemp, Warning, TEXT("Actions not found in GOAPController."));
 
 	if (wsCurrentWorld.isEmpty())
@@ -58,17 +59,18 @@ void AGOAPController::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 }
 
-bool AGOAPController::executeGOAP() {
-
-	if (generatePlan()) {
-
-		if (plan.Num() > 0) {
-				
+bool AGOAPController::executeGOAP() 
+{
+	if (generatePlan()) 
+	{
+		if (plan.Num() > 0) 
+		{				
 			// Gets next action to perform.
 			UGOAPAction* aux = plan[plan.Num() - 1];
 
 			// Performs an action and when it's done its effects are applied, changing the current world state.
-			if (aux->doAction(GetPawn())) {
+			if (aux->doAction(GetPawn())) 
+			{
 				wsCurrentWorld.joinWorldState(aux->getEffects());
 			}
 
@@ -79,10 +81,10 @@ bool AGOAPController::executeGOAP() {
 	return false;
 }
 
-bool AGOAPController::generatePlan() {
-
-	if (auxActions.size() > 0 && !wsCurrentWorld.isEmpty() && !wsDesiredWorld.isEmpty()) {
-
+bool AGOAPController::generatePlan() 
+{
+	if (auxActions.Num() > 0 && !wsCurrentWorld.isEmpty() && !wsDesiredWorld.isEmpty()) 
+	{
 		// Creates the cheapest plan of actions.
 		plan = planner->generatePlan(GetPawn());
 
@@ -92,31 +94,31 @@ bool AGOAPController::generatePlan() {
 	return false;
 }
 
-TArray<UGOAPAction*> AGOAPController::getPlan() {
-
+TArray<UGOAPAction*> AGOAPController::getPlan() 
+{
 	return plan;
 }
 
-void AGOAPController::setGoal(TArray<FAtom> newGoal) {
-
+void AGOAPController::setGoal(const TArray<FAtom>& newGoal)
+{
 	wsDesiredWorld.cleanAtoms();
 	updateGoal(newGoal);
 }
 
-void AGOAPController::updateGoal(TArray<FAtom> atoms) {
-
+void AGOAPController::updateGoal(const TArray<FAtom>& atoms)
+{
 	for (FAtom atom : atoms)
 		wsDesiredWorld.addAtom(atom.name, atom.value);
 }
 
-void AGOAPController::setCurrentWorld(TArray<FAtom> newCurrentWorld) {
-
+void AGOAPController::setCurrentWorld(const TArray<FAtom>& newCurrentWorld)
+{
 	wsCurrentWorld.cleanAtoms();
 	updateCurrentWorld(newCurrentWorld);
 }
 
-void AGOAPController::updateCurrentWorld(TArray<FAtom> atoms) {
-
+void AGOAPController::updateCurrentWorld(const TArray<FAtom>& atoms)
+{
 	for (FAtom atom : atoms)
 		wsCurrentWorld.addAtom(atom.name, atom.value);
 }
