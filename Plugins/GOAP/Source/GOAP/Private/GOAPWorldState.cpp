@@ -57,7 +57,8 @@ void GOAPWorldState::setAtoms(std::map<FString, bool> a) {
 
 void GOAPWorldState::addAtom(FString name, bool value) {
 
-	atoms.insert({ name,value });
+	//atoms.insert({ name,value });
+	atoms[name] = value;
 }
 
 void GOAPWorldState::cleanAtoms() {

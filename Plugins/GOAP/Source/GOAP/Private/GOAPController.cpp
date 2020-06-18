@@ -100,7 +100,24 @@ TArray<UGOAPAction*> AGOAPController::getPlan() {
 void AGOAPController::setGoal(TArray<FAtom> newGoal) {
 
 	wsDesiredWorld.cleanAtoms();
+	updateGoal(newGoal);
+}
 
-	for (FAtom atom : newGoal)
+void AGOAPController::updateGoal(TArray<FAtom> atoms) {
+
+	for (FAtom atom : atoms)
 		wsDesiredWorld.addAtom(atom.name, atom.value);
 }
+
+void AGOAPController::setCurrentWorld(TArray<FAtom> newCurrentWorld) {
+
+	wsCurrentWorld.cleanAtoms();
+	updateCurrentWorld(newCurrentWorld);
+}
+
+void AGOAPController::updateCurrentWorld(TArray<FAtom> atoms) {
+
+	for (FAtom atom : atoms)
+		wsCurrentWorld.addAtom(atom.name, atom.value);
+}
+

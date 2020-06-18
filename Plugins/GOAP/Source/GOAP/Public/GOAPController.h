@@ -77,4 +77,16 @@ public:
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	void setGoal(TArray<FAtom> newGoal);
 
+	// Adds or modifies atoms from the desired world state. Atoms already existing in the desired world state are modified by new input values.
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
+	void updateGoal(TArray<FAtom> atoms);
+
+	// Sets the current world state of the AI, this function can also be used to change the current world state.
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
+	void setCurrentWorld(TArray<FAtom> newCurrentWorld);
+
+	// Adds or modifies atoms from the current world state. Atoms already existing in the current world state are modified by new input values.
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
+	void updateCurrentWorld(TArray<FAtom> atoms);
+
 };
