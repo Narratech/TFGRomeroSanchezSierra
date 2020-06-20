@@ -26,3 +26,5 @@ Thank you very much!
   Change AI goal:
   - { Z } Get Coin.
   - { X } Follow Character.
+  - { C } Prints Character's Current World State Atoms.
+  - { V } Prints Character's Desired World State Atoms.
