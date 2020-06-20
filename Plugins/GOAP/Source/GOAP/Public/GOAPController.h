@@ -88,4 +88,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	void updateCurrentWorld(const TArray<FAtom>& atoms);
 
+	// Returns the current world state atoms
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
+	TArray<FAtom> getCurrentWorldStateAtoms();
+
+	// Returns the desired world state atoms
+	UFUNCTION(BlueprintCallable, Category = GOAPController)
+	TArray<FAtom> getDesiredWorldStateAtoms();
 };

@@ -123,3 +123,24 @@ void AGOAPController::updateCurrentWorld(const TArray<FAtom>& atoms)
 		wsCurrentWorld.addAtom(atom.name, atom.value);
 }
 
+TArray<FAtom> AGOAPController::getCurrentWorldStateAtoms()
+{
+	TArray<FAtom> worldStateAtoms;
+	for (auto atoms : wsCurrentWorld.getAtoms())
+	{
+		worldStateAtoms.Add({atoms.first, atoms.second});
+	}
+
+	return worldStateAtoms;
+}
+
+TArray<FAtom> AGOAPController::getDesiredWorldStateAtoms()
+{
+	TArray<FAtom> worldStateAtoms;
+	for (auto atoms : wsDesiredWorld.getAtoms())
+	{
+		worldStateAtoms.Add({ atoms.first, atoms.second });
+	}
+
+	return worldStateAtoms;
+}
