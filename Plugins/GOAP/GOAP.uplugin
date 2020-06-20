@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
   "Version": 1,
-  "VersionName": "1.0",
+  "VersionName": "1.1",
   "FriendlyName": "GOAP NPC",
   "Description": "Plugin for make GOAP AI using Blueprints",
   "Category": "AI",
