@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.0",
+	"VersionName": "1.1",
 	"FriendlyName": "GOAP NPC",
 	"Description": "Plugin for make GOAP AI using Blueprints",
 	"Category": "AI",
@@ -10,7 +10,6 @@
 	"DocsURL": "https://drive.google.com/open?id=131lMBvNILMxDJUh6yazG3JZJiKjXac1G",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/40c1ae5f1b284d70bcc863bc98ccf68d",
 	"SupportURL": "https://github.com/Narratech/TFGRomeroSanchezSierra",
-	"EngineVersion": "4.25.0",
 	"CanContainContent": false,
 	"Installed": true,
 	"Modules": [

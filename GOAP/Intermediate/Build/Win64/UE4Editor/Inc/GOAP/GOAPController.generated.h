@@ -15,24 +15,34 @@ class UGOAPAction;
 #endif
 #define GOAP_GOAPController_generated_h
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_SPARSE_DATA
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_RPC_WRAPPERS \
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execgetDesiredWorldStateAtoms); \
+	DECLARE_FUNCTION(execgetCurrentWorldStateAtoms); \
+	DECLARE_FUNCTION(execupdateCurrentWorld); \
+	DECLARE_FUNCTION(execsetCurrentWorld); \
+	DECLARE_FUNCTION(execupdateGoal); \
 	DECLARE_FUNCTION(execsetGoal); \
 	DECLARE_FUNCTION(execgetPlan); \
 	DECLARE_FUNCTION(execgeneratePlan); \
 	DECLARE_FUNCTION(execexecuteGOAP);
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execgetDesiredWorldStateAtoms); \
+	DECLARE_FUNCTION(execgetCurrentWorldStateAtoms); \
+	DECLARE_FUNCTION(execupdateCurrentWorld); \
+	DECLARE_FUNCTION(execsetCurrentWorld); \
+	DECLARE_FUNCTION(execupdateGoal); \
 	DECLARE_FUNCTION(execsetGoal); \
 	DECLARE_FUNCTION(execgetPlan); \
 	DECLARE_FUNCTION(execgeneratePlan); \
 	DECLARE_FUNCTION(execexecuteGOAP);
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_INCLASS_NO_PURE_DECLS \
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGOAPController(); \
 	friend struct Z_Construct_UClass_AGOAPController_Statics; \
@@ -41,7 +51,7 @@ public: \
 	DECLARE_SERIALIZER(AGOAPController)
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_INCLASS \
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS \
 private: \
 	static void StaticRegisterNativesAGOAPController(); \
 	friend struct Z_Construct_UClass_AGOAPController_Statics; \
@@ -50,7 +60,7 @@ public: \
 	DECLARE_SERIALIZER(AGOAPController)
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_STANDARD_CONSTRUCTORS \
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AGOAPController(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGOAPController) \
@@ -63,7 +73,7 @@ private: \
 public:
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_ENHANCED_CONSTRUCTORS \
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AGOAPController(AGOAPController&&); \
@@ -74,28 +84,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGOAPController); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGOAPController)
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_PRIVATE_PROPERTY_OFFSET
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_23_PROLOG
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_GENERATED_BODY_LEGACY \
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_22_PROLOG
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_PRIVATE_PROPERTY_OFFSET \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_SPARSE_DATA \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_RPC_WRAPPERS \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_INCLASS \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_STANDARD_CONSTRUCTORS \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_GENERATED_BODY \
+#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_PRIVATE_PROPERTY_OFFSET \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_SPARSE_DATA \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_INCLASS_NO_PURE_DECLS \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_26_ENHANCED_CONSTRUCTORS \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS_NO_PURE_DECLS \
+	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

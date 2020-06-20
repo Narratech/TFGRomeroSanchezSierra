@@ -10,27 +10,26 @@
  */
 #include "GOAPPlanner.h"
 
-GOAPPlanner::GOAPPlanner()
-{
-}
+GOAPPlanner::GOAPPlanner() {}
 
-GOAPPlanner::~GOAPPlanner()
-{
-}
+GOAPPlanner::~GOAPPlanner() {}
 
-GOAPPlanner::GOAPPlanner(GOAPWorldState* c, GOAPWorldState* g, std::vector<UGOAPAction*> a)
+GOAPPlanner::GOAPPlanner(GOAPWorldState* c, GOAPWorldState* g, const TArray<UGOAPAction*>& a)
 {
 	currentWorld = c;
 	goal = g;
 	actions = a;
 }
 
-GOAPNode GOAPPlanner::lowestFinList(TArray<GOAPNode> opList) {
+GOAPNode GOAPPlanner::lowestFinList(const TArray<GOAPNode>& opList) 
+{
 	GOAPNode node;
 
 	float minF = MAX_FLT;
-	for (GOAPNode &n : opList) {
-		if ((n.getF()) < minF) {
+	for (GOAPNode n : opList) 
+	{
+		if ((n.getF()) < minF) 
+		{
 			node = n;
 			minF = n.getF();
 		}
@@ -39,21 +38,13 @@ GOAPNode GOAPPlanner::lowestFinList(TArray<GOAPNode> opList) {
 	return node;
 }
 
-bool containsNodeOpen(GOAPNode nod, TArray<GOAPNode> lista) {
-	bool contiene = false;
-	for (GOAPNode &n : lista) {
-		if (n == nod) {
-			contiene = true;
-			break;
-		}
-	}
-	return contiene;
-}
-
-bool containsNode(GOAPNode node, TArray<GOAPNode> list) {
+bool containsNode(GOAPNode node, const TArray<GOAPNode>& list) 
+{
 	bool contains = false;
-	for (GOAPNode &n : list) {
-		if (n == node) {
+	for (GOAPNode n : list) 
+	{
+		if (n == node) 
+		{
 			contains = true;
 			break;
 		}
@@ -61,81 +52,78 @@ bool containsNode(GOAPNode node, TArray<GOAPNode> list) {
 	return contains;
 }
 
-std::vector<GOAPNode> GOAPPlanner::getAdjacent(GOAPNode current, std::vector<UGOAPAction*> vActions, APawn* p) {
-
-	std::vector<GOAPNode> adjacentNodes;
+TArray<GOAPNode> GOAPPlanner::getAdjacent(GOAPNode current, const TArray<UGOAPAction*>& vActions, APawn* p) 
+{
+	TArray<GOAPNode> adjacentNodes;
 	GOAPNode adjacent;
 	GOAPWorldState world;
 
-	for (int i = 0; i < vActions.size(); ++i) {
-
+	for (int i = 0; i < vActions.Num(); ++i) 
+	{
 		// Checks if the action can be performed from the current world.
-		if (current.getWorld().isIncluded(vActions[i]->getPreconditions())) {
-
-			// Checks if the action is the same as the current one. (This can be deleted if you want your AI to perform the same action consecutively).
-			if (current.getAction() != vActions[i]) {
-
-				// Checks the procedural precondition of the action.
-				if (vActions[i]->checkProceduralPrecondition(p)) {
-
-					world = current.getWorld(); // Saves the current world.
-					world.joinWorldState(vActions[i]->getEffects()); // Applies effects of the action to the saved world.
-					adjacent.setWorld(world); // Sets the adjacet node's world.
-					adjacent.setAction(vActions[i]); // Sets the adjacet node's action. 
-					adjacentNodes.push_back(adjacent); // Includes the adjacent node in the list.
-
-				}
-			}
+		const bool bPredoncitionsAreMet = current.getWorld().isIncluded(vActions[i]->getPreconditions());
+		// Checks if the action is the same as the current one. (This can be deleted if you want your AI to perform the same action consecutively).
+		const bool bSameActionAsBefore = current.getAction() == vActions[i];
+		// Checks the procedural precondition of the action.
+		const bool bProceduralPreconditionFulfilled = vActions[i]->checkProceduralPrecondition(p);
+		
+		if (bPredoncitionsAreMet && !bSameActionAsBefore && bProceduralPreconditionFulfilled)
+		{
+			world = current.getWorld(); // Saves the current world.
+			world.joinWorldState(vActions[i]->getEffects()); // Applies effects of the action to the saved world.
+			adjacent.setWorld(world); // Sets the adjacet node's world.
+			adjacent.setAction(vActions[i]); // Sets the adjacet node's action. 
+			adjacentNodes.Push(adjacent); // Includes the adjacent node in the list.
 		}
 	}
 	return adjacentNodes;
 }
 
-TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p) {
-
+TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p) 
+{
 	TArray<UGOAPAction*> sol;
 
 	GOAPNode start; start.setWorld(*currentWorld); start.setParent(-1);
 	GOAPNode last;
 
 	openList.Empty();
-	closedList.clear();
+	closedList.Empty();
 	openList.Push(start);
 	bool continues = true;
 
 	// Search and create the cheapest path between actions having into account their preconditions, effects and cost.
-	while (continues) {
-
+	while (continues) 
+	{
 		GOAPNode current = lowestFinList(openList);
 		openList.Remove(current);
-		closedList.push_back(current);
-		int pos = closedList.size() - 1;
+		closedList.Push(current);
+		int pos = closedList.Num() - 1;
 
 		// When the current plan reaches the goal, the plan stops.
-		if (current.getWorld().isIncluded(*goal)) {
-
+		if (current.getWorld().isIncluded(*goal)) 
+		{
 			last = current;
 			continues = false;
 			break;
 		}
 
 		// Get adjacents of actual node.
-		std::vector<GOAPNode> adjacents = getAdjacent(current, actions, p);
+		TArray<GOAPNode> adjacents = getAdjacent(current, actions, p);
 
 		// Explore adjacent nodes.
-		for (GOAPNode &adjacent : adjacents) {
-
+		for (GOAPNode& adjacent : adjacents) 
+		{
 			// If the adjacent node isn't in the open list, it is added.
-			if (!containsNodeOpen(adjacent, openList)) {
-
+			if (!containsNode(adjacent, openList)) 
+			{
 				adjacent.setParent(pos);
 				adjacent.setH(current.getWorld());
 				adjacent.setG(current);
 				openList.Push(adjacent);
 			}
 			// If current path to adjacent node is cheaper than the previous one, the path changes. 
-			else if (adjacent.getG() > adjacent.getG() + current.getG()) {
-
+			else if (adjacent.getG() > adjacent.getG() + current.getG()) 
+			{
 				adjacent.setParent(pos);
 				adjacent.setG(current);
 			}
@@ -149,26 +137,32 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p) {
 
 	// Extracts the plan's path in reverse from closed list and copy it to a new variable.
 	GOAPNode planNode = last;
-	while (!(planNode == start)) {
+	while (!(planNode == start)) 
+	{
 		sol.Push(planNode.getAction());
 		planNode = closedList[planNode.getParent()];
 	}
 	return sol;
 }
 
-void GOAPPlanner::addAction(UGOAPAction* a) {
-	this->actions.push_back(a);
+void GOAPPlanner::addAction(UGOAPAction* a) 
+{
+	this->actions.Push(a);
 }
 
-GOAPWorldState GOAPPlanner::getGoal() {
+GOAPWorldState GOAPPlanner::getGoal() 
+{
 	return *goal;
 }
-void GOAPPlanner::setGoal(GOAPWorldState* g) {
+void GOAPPlanner::setGoal(GOAPWorldState* g) 
+{
 	this->goal = g;
 }
-GOAPWorldState GOAPPlanner::getCurrentWorld() {
+GOAPWorldState GOAPPlanner::getCurrentWorld() 
+{
 	return *currentWorld;
 }
-void GOAPPlanner::setCurrentWorld(GOAPWorldState* w) {
+void GOAPPlanner::setCurrentWorld(GOAPWorldState* w) 
+{
 	this->currentWorld = w;
 }

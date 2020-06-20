@@ -95,9 +95,9 @@ public:
 
 	// COMPARATORS
 
-	bool operator==(UGOAPAction & action);
+	bool operator==(UGOAPAction& action);
 
-	bool operator!=(UGOAPAction & action);
+	bool operator!=(UGOAPAction& action);
 
 	// GETS
 
