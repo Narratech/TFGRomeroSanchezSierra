@@ -35,7 +35,7 @@ void AGOAPController::BeginPlay()
 
 	// Loads Planner.
 	planner = new GOAPPlanner(&wsCurrentWorld, &wsDesiredWorld, auxActions);
-
+	planner->setMaxDepth(maxDepth);
 	// Error messages.
 	if(auxActions.Num() == 0)
 		UE_LOG(LogTemp, Warning, TEXT("Actions not found in GOAPController."));

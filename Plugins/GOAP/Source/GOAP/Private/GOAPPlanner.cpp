@@ -85,7 +85,7 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p)
 
 	GOAPNode start; start.setWorld(*currentWorld); start.setParent(-1);
 	GOAPNode last;
-
+	int cost=0;
 	openList.Empty();
 	closedList.Empty();
 	openList.Push(start);
@@ -97,8 +97,9 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p)
 		GOAPNode current = lowestFinList(openList);
 		openList.Remove(current);
 		closedList.Push(current);
+		cost++;
 		int pos = closedList.Num() - 1;
-
+		
 		// When the current plan reaches the goal, the plan stops.
 		if (current.getWorld().isIncluded(*goal)) 
 		{
@@ -106,7 +107,6 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p)
 			continues = false;
 			break;
 		}
-
 		// Get adjacents of actual node.
 		TArray<GOAPNode> adjacents = getAdjacent(current, actions, p);
 
@@ -130,9 +130,9 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p)
 		}
 
 		// If open list is empty, the plan stops.
-		if (openList.Num() == 0)
+		if (openList.Num() == 0 || cost > getMaxDepth()) {
 			continues = false;
-
+		}
 	}
 
 	// Extracts the plan's path in reverse from closed list and copy it to a new variable.
@@ -165,4 +165,12 @@ GOAPWorldState GOAPPlanner::getCurrentWorld()
 void GOAPPlanner::setCurrentWorld(GOAPWorldState* w) 
 {
 	this->currentWorld = w;
+}
+
+int GOAPPlanner::getMaxDepth() {
+	return maxDepth;
+}
+
+void GOAPPlanner::setMaxDepth(int md) {
+	maxDepth = md;
 }

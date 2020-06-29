@@ -34,6 +34,8 @@ private:
 
 	TArray<GOAPNode> closedList;
 
+	int maxDepth;
+
 public:
 
 	GOAPPlanner();
@@ -59,10 +61,14 @@ public:
 
 	GOAPWorldState getCurrentWorld();
 
+	int getMaxDepth();
+
 	//SETS
 
 	void setGoal(GOAPWorldState* g);
 
 	void setCurrentWorld(GOAPWorldState* w);
+
+	void setMaxDepth(int md);
 
 };

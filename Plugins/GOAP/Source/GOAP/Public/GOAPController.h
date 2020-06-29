@@ -38,6 +38,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
 	TArray<TSubclassOf<UGOAPAction>> actions;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
+		int maxDepth = 100;
 private:
 
 	GOAPPlanner* planner;
