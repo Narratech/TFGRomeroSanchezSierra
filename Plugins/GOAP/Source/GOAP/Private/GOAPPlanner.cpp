@@ -85,11 +85,11 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p)
 
 	GOAPNode start; start.setWorld(*currentWorld); start.setParent(-1);
 	GOAPNode last;
-	int cost=0;
 	openList.Empty();
 	closedList.Empty();
 	openList.Push(start);
 	bool continues = true;
+	bool goalReached = false;
 
 	// Search and create the cheapest path between actions having into account their preconditions, effects and cost.
 	while (continues) 
@@ -97,7 +97,6 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p)
 		GOAPNode current = lowestFinList(openList);
 		openList.Remove(current);
 		closedList.Push(current);
-		cost++;
 		int pos = closedList.Num() - 1;
 		
 		// When the current plan reaches the goal, the plan stops.
@@ -105,6 +104,7 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p)
 		{
 			last = current;
 			continues = false;
+			goalReached = true;
 			break;
 		}
 		// Get adjacents of actual node.
@@ -129,18 +129,22 @@ TArray<UGOAPAction*> GOAPPlanner::generatePlan(APawn* p)
 			}
 		}
 
-		// If open list is empty, the plan stops.
-		if (openList.Num() == 0 || cost > getMaxDepth()) {
+		// If open list is empty or the algorithm reach the maximum depth, the plan stops.
+		if (openList.Num() == 0 || closedList.Num() > getMaxDepth()) 
+		{
 			continues = false;
 		}
 	}
 
 	// Extracts the plan's path in reverse from closed list and copy it to a new variable.
-	GOAPNode planNode = last;
-	while (!(planNode == start)) 
+	if (goalReached)
 	{
-		sol.Push(planNode.getAction());
-		planNode = closedList[planNode.getParent()];
+		GOAPNode planNode = last;
+		while (!(planNode == start))
+		{
+			sol.Push(planNode.getAction());
+			planNode = closedList[planNode.getParent()];
+		}
 	}
 	return sol;
 }

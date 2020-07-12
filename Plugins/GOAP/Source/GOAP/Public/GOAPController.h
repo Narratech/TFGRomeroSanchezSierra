@@ -38,8 +38,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
 	TArray<TSubclassOf<UGOAPAction>> actions;
 
+	// Maximum algorithm depth.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
-		int maxDepth = 100;
+	int maxDepth = 100;
+
 private:
 
 	GOAPPlanner* planner;
