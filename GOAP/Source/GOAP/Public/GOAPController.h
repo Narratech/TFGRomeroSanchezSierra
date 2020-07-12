@@ -38,6 +38,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
 	TArray<TSubclassOf<UGOAPAction>> actions;
 
+	// Maximum algorithm depth.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GOAP)
+	int maxDepth = 100;
+
 private:
 
 	GOAPPlanner* planner;
@@ -88,11 +92,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	void updateCurrentWorld(const TArray<FAtom>& atoms);
 
-	// Returns the current world state atoms
+	// Returns the current world state atoms.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	TArray<FAtom> getCurrentWorldStateAtoms();
 
-	// Returns the desired world state atoms
+	// Returns the desired world state atoms.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	TArray<FAtom> getDesiredWorldStateAtoms();
 };

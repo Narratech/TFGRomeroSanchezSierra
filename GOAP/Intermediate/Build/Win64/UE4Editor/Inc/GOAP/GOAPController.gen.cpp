@@ -207,9 +207,9 @@ void EmptyLinkFunctionForGeneratedCodeGOAPController() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGOAPController_getCurrentWorldStateAtoms_Statics::Function_MetaDataParams[] = {
 		{ "Category", "GOAPController" },
-		{ "Comment", "// Returns the current world state atoms\n" },
+		{ "Comment", "// Returns the current world state atoms.\n" },
 		{ "ModuleRelativePath", "Public/GOAPController.h" },
-		{ "ToolTip", "Returns the current world state atoms" },
+		{ "ToolTip", "Returns the current world state atoms." },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGOAPController_getCurrentWorldStateAtoms_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGOAPController, nullptr, "getCurrentWorldStateAtoms", nullptr, nullptr, sizeof(GOAPController_eventgetCurrentWorldStateAtoms_Parms), Z_Construct_UFunction_AGOAPController_getCurrentWorldStateAtoms_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGOAPController_getCurrentWorldStateAtoms_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGOAPController_getCurrentWorldStateAtoms_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGOAPController_getCurrentWorldStateAtoms_Statics::Function_MetaDataParams)) };
@@ -245,9 +245,9 @@ void EmptyLinkFunctionForGeneratedCodeGOAPController() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGOAPController_getDesiredWorldStateAtoms_Statics::Function_MetaDataParams[] = {
 		{ "Category", "GOAPController" },
-		{ "Comment", "// Returns the desired world state atoms\n" },
+		{ "Comment", "// Returns the desired world state atoms.\n" },
 		{ "ModuleRelativePath", "Public/GOAPController.h" },
-		{ "ToolTip", "Returns the desired world state atoms" },
+		{ "ToolTip", "Returns the desired world state atoms." },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGOAPController_getDesiredWorldStateAtoms_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGOAPController, nullptr, "getDesiredWorldStateAtoms", nullptr, nullptr, sizeof(GOAPController_eventgetDesiredWorldStateAtoms_Parms), Z_Construct_UFunction_AGOAPController_getDesiredWorldStateAtoms_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGOAPController_getDesiredWorldStateAtoms_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGOAPController_getDesiredWorldStateAtoms_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGOAPController_getDesiredWorldStateAtoms_Statics::Function_MetaDataParams)) };
@@ -494,6 +494,10 @@ void EmptyLinkFunctionForGeneratedCodeGOAPController() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_maxDepth_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_maxDepth;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_actions_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_actions;
@@ -519,8 +523,8 @@ void EmptyLinkFunctionForGeneratedCodeGOAPController() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGOAPController_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AGOAPController_executeGOAP, "executeGOAP" }, // 3594310233
 		{ &Z_Construct_UFunction_AGOAPController_generatePlan, "generatePlan" }, // 1204151782
-		{ &Z_Construct_UFunction_AGOAPController_getCurrentWorldStateAtoms, "getCurrentWorldStateAtoms" }, // 777413772
-		{ &Z_Construct_UFunction_AGOAPController_getDesiredWorldStateAtoms, "getDesiredWorldStateAtoms" }, // 1055211616
+		{ &Z_Construct_UFunction_AGOAPController_getCurrentWorldStateAtoms, "getCurrentWorldStateAtoms" }, // 1485631998
+		{ &Z_Construct_UFunction_AGOAPController_getDesiredWorldStateAtoms, "getDesiredWorldStateAtoms" }, // 2498799905
 		{ &Z_Construct_UFunction_AGOAPController_getPlan, "getPlan" }, // 128379064
 		{ &Z_Construct_UFunction_AGOAPController_setCurrentWorld, "setCurrentWorld" }, // 2769143501
 		{ &Z_Construct_UFunction_AGOAPController_setGoal, "setGoal" }, // 4244640750
@@ -536,6 +540,15 @@ void EmptyLinkFunctionForGeneratedCodeGOAPController() {}
 		{ "ToolTip", "AIController containg the planner, states of the current and desired world, and the list of available actions the AI can perform.\nCurrent world and desired world are private for each AI, but it's possible to create a global current world to notify changes to other AIs." },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGOAPController_Statics::NewProp_maxDepth_MetaData[] = {
+		{ "Category", "GOAP" },
+		{ "Comment", "// Maximum algorithm depth.\n" },
+		{ "ModuleRelativePath", "Public/GOAPController.h" },
+		{ "ToolTip", "Maximum algorithm depth." },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AGOAPController_Statics::NewProp_maxDepth = { "maxDepth", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGOAPController, maxDepth), METADATA_PARAMS(Z_Construct_UClass_AGOAPController_Statics::NewProp_maxDepth_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGOAPController_Statics::NewProp_maxDepth_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGOAPController_Statics::NewProp_actions_MetaData[] = {
 		{ "Category", "GOAP" },
@@ -567,6 +580,7 @@ void EmptyLinkFunctionForGeneratedCodeGOAPController() {}
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AGOAPController_Statics::NewProp_currentWorld = { "currentWorld", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGOAPController, currentWorld), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AGOAPController_Statics::NewProp_currentWorld_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGOAPController_Statics::NewProp_currentWorld_MetaData)) };
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AGOAPController_Statics::NewProp_currentWorld_Inner = { "currentWorld", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FAtom, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGOAPController_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGOAPController_Statics::NewProp_maxDepth,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGOAPController_Statics::NewProp_actions,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGOAPController_Statics::NewProp_actions_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGOAPController_Statics::NewProp_desiredWorld,
@@ -601,7 +615,7 @@ void EmptyLinkFunctionForGeneratedCodeGOAPController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGOAPController, 2885559515);
+	IMPLEMENT_CLASS(AGOAPController, 3248280574);
 	template<> GOAP_API UClass* StaticClass<AGOAPController>()
 	{
 		return AGOAPController::StaticClass();

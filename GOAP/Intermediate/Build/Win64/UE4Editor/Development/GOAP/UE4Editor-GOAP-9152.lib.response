@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-GOAP-9152.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Unreal Projects\TFGRomeroSanchezSierra\Intermediate\Build\Win64\TFGEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"E:\Unreal Projects\TFGRomeroSanchezSierra\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\PlanTest.cpp.obj"
+"E:\Unreal Projects\TFGRomeroSanchezSierra\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\Module.GOAP.cpp.obj"
+"E:\Unreal Projects\TFGRomeroSanchezSierra\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\Module.GOAP.gen.cpp.obj"
+"E:\Unreal Projects\TFGRomeroSanchezSierra\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\Default.rc2.res"
+/OUT:"E:\Unreal Projects\TFGRomeroSanchezSierra\Plugins\GOAP\Intermediate\Build\Win64\UE4Editor\Development\GOAP\UE4Editor-GOAP-9152.lib"
+/INCLUDE:IMPLEMENT_MODULE_GOAP

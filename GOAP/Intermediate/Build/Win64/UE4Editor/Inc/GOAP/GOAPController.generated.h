@@ -15,8 +15,8 @@ class UGOAPAction;
 #endif
 #define GOAP_GOAPController_generated_h
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS \
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execgetDesiredWorldStateAtoms); \
 	DECLARE_FUNCTION(execgetCurrentWorldStateAtoms); \
@@ -29,7 +29,7 @@ class UGOAPAction;
 	DECLARE_FUNCTION(execexecuteGOAP);
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execgetDesiredWorldStateAtoms); \
 	DECLARE_FUNCTION(execgetCurrentWorldStateAtoms); \
@@ -42,7 +42,7 @@ class UGOAPAction;
 	DECLARE_FUNCTION(execexecuteGOAP);
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS_NO_PURE_DECLS \
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGOAPController(); \
 	friend struct Z_Construct_UClass_AGOAPController_Statics; \
@@ -51,7 +51,7 @@ public: \
 	DECLARE_SERIALIZER(AGOAPController)
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS \
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS \
 private: \
 	static void StaticRegisterNativesAGOAPController(); \
 	friend struct Z_Construct_UClass_AGOAPController_Statics; \
@@ -60,7 +60,7 @@ public: \
 	DECLARE_SERIALIZER(AGOAPController)
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_STANDARD_CONSTRUCTORS \
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AGOAPController(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGOAPController) \
@@ -73,7 +73,7 @@ private: \
 public:
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_ENHANCED_CONSTRUCTORS \
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AGOAPController(AGOAPController&&); \
@@ -84,28 +84,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGOAPController); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGOAPController)
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_22_PROLOG
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_GENERATED_BODY_LEGACY \
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_22_PROLOG
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_STANDARD_CONSTRUCTORS \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_GENERATED_BODY \
+#define TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS_NO_PURE_DECLS \
-	HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_ENHANCED_CONSTRUCTORS \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_PRIVATE_PROPERTY_OFFSET \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_SPARSE_DATA \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_INCLASS_NO_PURE_DECLS \
+	TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h_25_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -113,7 +113,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> GOAP_API UClass* StaticClass<class AGOAPController>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID HostProject_Plugins_GOAP_Source_GOAP_Public_GOAPController_h
+#define CURRENT_FILE_ID TFGRomeroSanchezSierra_Plugins_GOAP_Source_GOAP_Public_GOAPController_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

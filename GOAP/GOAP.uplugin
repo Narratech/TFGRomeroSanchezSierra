@@ -1,26 +1,28 @@
 {
-	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.1",
-	"FriendlyName": "GOAP NPC",
-	"Description": "Plugin for make GOAP AI using Blueprints",
-	"Category": "AI",
-	"CreatedBy": "Diego Romero-Hombrebueno, Mario Sanchez, Jose Manuel Sierra",
-	"CreatedByURL": "https://github.com/Narratech/TFGRomeroSanchezSierra",
-	"DocsURL": "https://drive.google.com/open?id=131lMBvNILMxDJUh6yazG3JZJiKjXac1G",
-	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/40c1ae5f1b284d70bcc863bc98ccf68d",
-	"SupportURL": "https://github.com/Narratech/TFGRomeroSanchezSierra",
-	"CanContainContent": false,
-	"Installed": true,
-	"Modules": [
-		{
-			"Name": "GOAP",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"WhitelistPlatforms": [
-				"Win64",
-				"Android"
-			]
-		}
-	]
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.1",
+  "FriendlyName": "GOAP NPC",
+  "Description": "Plugin for make GOAP AI using Blueprints",
+  "Category": "AI",
+  "CreatedBy": "Diego Romero-Hombrebueno, Mario Sanchez, Jose Manuel Sierra",
+  "CreatedByURL": "https://github.com/Narratech/TFGRomeroSanchezSierra",
+  "DocsURL": "https://drive.google.com/open?id=131lMBvNILMxDJUh6yazG3JZJiKjXac1G",
+  "MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/40c1ae5f1b284d70bcc863bc98ccf68d",
+  "SupportURL": "https://github.com/Narratech/TFGRomeroSanchezSierra",
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "GOAP",
+      "Type": "Runtime",
+      "LoadingPhase": "Default",
+      "WhitelistPlatforms": [
+        "Win64",
+        "Android"
+      ]
+    }
+  ]
 }
