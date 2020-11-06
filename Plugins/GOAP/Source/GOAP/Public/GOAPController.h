@@ -64,6 +64,8 @@ public:
 
 	virtual void Tick(float DeltaSeconds) override;
 
+	virtual void BeginDestroy() override;
+
 	// Creates and execute the plan.
 	UFUNCTION(BlueprintCallable, Category = GOAPController)
 	bool executeGOAP();

@@ -30,7 +30,8 @@ void UGOAPAction::create_P_E()
 TArray<AActor*> UGOAPAction::getTargetsList(APawn* p) 
 {
 	TArray<AActor*> actorsFound;
-	UGameplayStatics::GetAllActorsOfClass(p->GetWorld(), targetsType, actorsFound);
+	if (p)
+		UGameplayStatics::GetAllActorsOfClass(p->GetWorld(), targetsType, actorsFound);
 	return actorsFound;
 }
 

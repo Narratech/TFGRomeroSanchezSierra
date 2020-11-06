@@ -17,8 +17,10 @@ void AGOAPController::BeginPlay()
 	// Loads actions.
 	for (auto i = 0; i < actions.Num(); ++i) 
 	{
-		FString aux = actions[i].GetDefaultObject()->GetName();
-		auxActions.Push(actions[i].GetDefaultObject());
+		if (actions[i]) {
+			FString aux = actions[i].GetDefaultObject()->GetName();
+			auxActions.Push(actions[i].GetDefaultObject());
+		}
 	}
 
 	// Loads Current World.
@@ -60,6 +62,15 @@ void AGOAPController::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 }
 
+void AGOAPController::BeginDestroy()
+{
+	if (planner) {
+		delete planner;
+		planner = NULL;
+	}
+	Super::BeginDestroy();
+}
+
 bool AGOAPController::executeGOAP() 
 {
 	if (generatePlan()) 
@@ -84,7 +95,7 @@ bool AGOAPController::executeGOAP()
 
 bool AGOAPController::generatePlan() 
 {
-	if (auxActions.Num() > 0 && !wsCurrentWorld.isEmpty() && !wsDesiredWorld.isEmpty()) 
+	if (auxActions.Num() > 0 && !wsDesiredWorld.isEmpty()) //&& !wsCurrentWorld.isEmpty() 
 	{
 		// Creates the cheapest plan of actions.
 		plan = planner->generatePlan(GetPawn());
